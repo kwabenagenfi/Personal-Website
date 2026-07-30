@@ -1,6 +1,6 @@
 export default function Nav() {
     return (
-        <nav className="flex items-center justify-between px-8 py-6 fixed top-0 w-full">
+        <nav className="flex items-center justify-between px-4 md:px-8 py-6 fixed top-0 w-full z-50">
             <div>Kwabeha Genfi</div>
 
 

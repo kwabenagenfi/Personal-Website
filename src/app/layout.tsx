@@ -28,7 +28,7 @@ export default function RootLayout({
       lang="en"
       className={`${fraunces.variable} ${inter.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-full min-w-full flex flex-col">
         <Nav />
         {children}
       </body>

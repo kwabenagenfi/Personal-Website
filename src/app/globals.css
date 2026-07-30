@@ -12,6 +12,21 @@
   --font-serif: var(--font-fraunces);
 }
 
+@keyframes scroll {
+  from {
+    transform: translateX(0%);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.fade-edges {
+  mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
