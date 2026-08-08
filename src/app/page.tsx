@@ -2,6 +2,7 @@ import Image from "next/image";
 import Hero from "@/components/Hero";
 import LogoMarquee from "@/components/LogoMarquee";
 import About from "@/components/About";
+import TechStack from "@/components/TechStack";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
         <Hero />
         <LogoMarquee />
         <About />
+        <TechStack />
       </main >
     </div >
   );

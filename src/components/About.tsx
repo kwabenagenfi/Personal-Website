@@ -1,4 +1,5 @@
 import Image from "next/image";
+import PopIn from "@/components/PopIn";
 
 export default function About() {
     const link = [
@@ -11,43 +12,48 @@ export default function About() {
     ];
     return (
         <section id="about" className="scroll-mt-24 grid md:grid-cols-2 gap-20 items-stretch">
-            <div className=" relative rounded-2xl overflow-hidden">
-                <Image
-                    src="/kobe6.jpg"
-                    alt="Kobe"
-                    width={500}
-                    height={600}
-                    className="rounded-2xl object-cover p-2"
-                />
-            </div>
-            <div className="lg:min-w-[600px] bg-white/10 backdrop-blur-md border border-white/10 rounded-2xl p-4">
-                <h2 className="text-4xl font-bold">Hey, I'm Kobe 🤟🏾</h2>
-                <p>Born and raised in Brooklyn, NY and currently in Cincinnati. I'm currently studying Computer Science with a Master's track in Artificial Intelligence at the University of Cincinnati, with a focus on backend development and robotic systems. </p>
-                <p className="mt-4"><strong>Hobbies:</strong> Coding, Music production, Football, Cooking</p>
-                <p><strong>Favorite languages:</strong> Python, Java, Golang</p>
 
-                <h2 className="text-3xl font-bold mt-8">Connect with me:</h2>
-                <p>Feel free to reach out to me on any of the platforms below. I'm always open to networking, collaboration, and new opportunities!</p>
-                <p>Let's connect and create something great together!</p>
-
-
-                <div className="flex flex-col gap-4 mt-7 ">
-                    {link.map((l) => (
-                        <a key={l.name} href={l.href} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3">
-                            <div className={`w-8 h-8 overflow-hidden ${l.name === "GitHub" || l.name === "X" ? "rounded-full" : ""}`}>
-                                <Image
-                                    src={l.icon}
-                                    alt={l.name}
-                                    width={32}
-                                    height={32}
-                                    className={`object-cover ${l.name === "Instagram" ? "scale-175" : ""}`}
-                                />
-                            </div>
-                            <span>{l.handle}</span>
-                        </a>
-                    ))}
+            <PopIn>
+                <div className=" relative rounded-2xl overflow-hidden">
+                    <Image
+                        src="/kobe6.jpg"
+                        alt="Kobe"
+                        width={500}
+                        height={600}
+                        className="rounded-2xl object-cover p-2"
+                    />
                 </div>
-            </div>
+            </PopIn>
+            <PopIn delay={0.2}>
+                <div className="lg:min-w-[600px] lg:min-h-[700px] bg-white/4 backdrop-blur-md border border-white/10 rounded-2xl p-4 hover:shadow-[0_0_25px_rgba(255,255,255,0.1),0_0_80px_rgba(255,255,255,0.15)] transition-shadow duration-300">
+                    <h2 className="text-4xl font-bold">Hey, I'm Kobe 🤟🏾</h2>
+                    <p>Born and raised in Brooklyn, NY and currently in Cincinnati. I'm currently studying Computer Science with a Master's track in Artificial Intelligence at the University of Cincinnati, with a focus on backend development and robotic systems. </p>
+                    <p className="mt-4"><strong>Hobbies:</strong> Coding, Music production, Football, Cooking</p>
+                    <p><strong>Favorite languages:</strong> Python, Java, Golang</p>
+
+                    <h2 className="text-3xl font-bold mt-8">Connect with me:</h2>
+                    <p className="mt-6">Feel free to reach out to me on any of the platforms below. I'm always open to networking, collaboration, and new opportunities!</p>
+                    <p>Let's connect and create something great together!</p>
+
+
+                    <div className="flex flex-col gap-4 mt-7 ">
+                        {link.map((l) => (
+                            <a key={l.name} href={l.href} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3">
+                                <div className={`w-8 h-8 overflow-hidden ${l.name === "GitHub" || l.name === "X" ? "rounded-full" : ""}`}>
+                                    <Image
+                                        src={l.icon}
+                                        alt={l.name}
+                                        width={32}
+                                        height={32}
+                                        className={`object-cover ${l.name === "Instagram" ? "scale-175" : ""}`}
+                                    />
+                                </div>
+                                <span>{l.handle}</span>
+                            </a>
+                        ))}
+                    </div>
+                </div>
+            </PopIn>
         </section>
     );
 }
