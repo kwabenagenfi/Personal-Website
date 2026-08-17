@@ -25,7 +25,7 @@ export default function About() {
                 </div>
             </PopIn>
             <PopIn delay={0.2}>
-                <div className="lg:min-w-[600px] lg:min-h-[700px] bg-white/4 backdrop-blur-md border border-white/10 rounded-2xl p-4 hover:shadow-[0_0_25px_rgba(255,255,255,0.1),0_0_80px_rgba(255,255,255,0.15)] transition-shadow duration-300">
+                <div className="lg:min-w-[600px] lg:min-h-[700px] bg-white/4 backdrop-blur-md border border-white/5 rounded-2xl p-4 hover:shadow-[0_0_25px_rgba(255,255,255,0.1),0_0_80px_rgba(255,255,255,0.15)] transition-shadow duration-300">
                     <h2 className="text-4xl font-bold">Hey, I'm Kobe 🤟🏾</h2>
                     <p>Born and raised in Brooklyn, NY and currently in Cincinnati. I'm currently studying Computer Science with a Master's track in Artificial Intelligence at the University of Cincinnati, with a focus on backend development and robotic systems. </p>
                     <p className="mt-4"><strong>Hobbies:</strong> Coding, Music production, Football, Cooking</p>
