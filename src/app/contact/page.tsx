@@ -41,21 +41,21 @@ export default function Contact() {
                             <input type="checkbox" name="botcheck" className="hidden" style={{ display: "none" }} />
 
                             <div>
-                                <label htmlFor="name" className="text-sm text-gray-400">Name</label>
+                                <label htmlFor="name" className="text-sm text-green-400">Name</label>
                                 <input
                                     type="text" id="name" name="name" placeholder="Your Name" required
                                     className="w-full mt-1 bg-white/5 border border-white/10 rounded-lg px-4 py-2 outline-none focus:border-white/30"
                                 />
                             </div>
                             <div>
-                                <label htmlFor="email" className="text-sm text-gray-400">Email</label>
+                                <label htmlFor="email" className="text-sm text-green-400">Email</label>
                                 <input
                                     type="email" id="email" name="email" placeholder="your.email@example.com" required
                                     className="w-full mt-1 bg-white/5 border border-white/10 rounded-lg px-4 py-2 outline-none focus:border-white/30"
                                 />
                             </div>
                             <div>
-                                <label htmlFor="message" className="text-sm text-gray-400">Message</label>
+                                <label htmlFor="message" className="text-sm text-green-400">Message</label>
                                 <textarea
                                     id="message" name="message" placeholder="Tell me about your project..." required rows={5}
                                     className="w-full mt-1 bg-white/5 border border-white/10 rounded-lg px-4 py-2 outline-none focus:border-white/30"

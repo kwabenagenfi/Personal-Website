@@ -7,7 +7,7 @@ export default function Nav() {
 
 
     return (
-        <nav className="flex items-center justify-between px-8 py-6 fixed top-0 w-full z-50 bg-black/70 backdrop-blur-sm">
+        <nav className="flex items-center justify-between px-8 py-4 fixed top-0 w-full z-50 bg-black/70 backdrop-blur-sm">
             <div>Kwabeha Genfi</div>
 
             <ul className="hidden md:flex gap-6">

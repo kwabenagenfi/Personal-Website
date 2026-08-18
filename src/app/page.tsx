@@ -8,6 +8,7 @@ import Link from "next/link";
 import ParticleBackground from "@/components/ParticleBackground";
 import ParticleBackgroundBack from "@/components/ParticleBackgroundBack";
 import CornerShapes from "@/components/CornerShapes";
+import Journey from "@/components/Journey";
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
           <About />
           <TechStack />
           <Projects />
+          <Journey />
           <section className="text-center py-20">
             <h2 className="text-3xl md:text-4xl font-serif">Let's build something together</h2>
             <Link
