@@ -59,8 +59,8 @@ export default function TechStack() {
 
             <div className="grid  gap-8 mt-12">
                 {stack.map((item, index) => (
-                    <PopIn key={item.title} delay={index * 0.2}>
-                        <div className="bg-purple-500/10 backdrop-blur-md border border-white/4 rounded-2xl p-8 hover:shadow-[0_0_25px_rgba(255,255,255,0.1),0_0_80px_rgba(255,255,255,0.15)] transition-shadow duration-300">
+                    <PopIn key={item.title} delay={index * 0.1}>
+                        <div className="bg-purple-500/20 backdrop-blur-md border border-white/4 rounded-2xl p-8 hover:shadow-[0_0_25px_rgba(255,255,255,0.1),0_0_80px_rgba(255,255,255,0.15)] transition-shadow duration-300">
                             <div className="grid md:grid-cols-2 gap-8">
                                 <div>
                                     <p className="text-xs tracking-widest text-blue-400 uppercase">Focus Area</p>

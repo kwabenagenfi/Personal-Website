@@ -75,11 +75,11 @@ export default function CornerShapes() {
                 {/* North — top, pushed back slightly, largest */}
                 <MorphingShape position={[0, 2.6, -1]} scale={0.5} color="#ffffff" rotationSpeed={0.004} />
                 {/* South — bottom, pulled forward, smallest */}
-                <MorphingShape position={[0, -2.6, 1]} scale={0.4} color="#ffffff" rotationSpeed={0.006} />
+                <MorphingShape position={[0, -2.8, 1]} scale={0.4} color="#ffffff" rotationSpeed={0.006} />
                 {/* East — right, mid-depth */}
-                <MorphingShape position={[3.6, 0, 0.4]} scale={0.4} color="#ffffff" rotationSpeed={0.005} />
+                <MorphingShape position={[3.6, 0, 0.3]} scale={0.4} color="#ffffff" rotationSpeed={0.005} />
                 {/* West — left, mid-depth, opposite offset */}
-                <MorphingShape position={[-3.6, 0, -0.4]} scale={0.3} color="#ffffff" rotationSpeed={0.0045} />
+                <MorphingShape position={[-3.6, 0, -0.6]} scale={0.5} color="#ffffff" rotationSpeed={0.0045} />
             </Canvas>
         </div>
     );

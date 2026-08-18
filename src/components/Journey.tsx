@@ -60,14 +60,14 @@ export default function Journey() {
                                             initial={{ rotateY: isLeft ? -90 : 90 }}
                                             whileInView={{ rotateY: 0 }}
                                             viewport={{ once: false, amount: 0.4 }}
-                                            transition={{ duration: 0.7 }}
+                                            transition={{ duration: 0.4 }}
                                             style={{
                                                 transformPerspective: 1000,
                                                 transformOrigin: isLeft ? "right center" : "left center",
                                             }}
 
                                         >
-                                            <div className="bg-purple-500/10 backdrop-blur-md border border-white/10 rounded-2xl p-6 hover:shadow-[0_0_25px_rgba(255,255,255,0.1),0_0_80px_rgba(255,255,255,0.15)] transition-shadow duration-300">
+                                            <div className="bg-purple-500/20 backdrop-blur-md border border-white/10 rounded-2xl p-6 hover:shadow-[0_0_25px_rgba(255,255,255,0.1),0_0_80px_rgba(255,255,255,0.15)] transition-shadow duration-300">
                                                 <p className="text-gray-400 text-xs tracking-widest uppercase">{item.date}</p>
                                                 <h3 className="text-xl font-bold mt-1">{item.title}</h3>
                                                 <p className="text-gray-400">{item.org}</p>

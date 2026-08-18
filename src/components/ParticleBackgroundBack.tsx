@@ -48,7 +48,7 @@ function ParticlesBack() {
             <bufferGeometry ref={geometryRef}>
                 <bufferAttribute attach="attributes-position" count={COUNT} array={current} itemSize={3} />
             </bufferGeometry>
-            <pointsMaterial size={0.04} color="#60a5fa" transparent opacity={0.1} />
+            <pointsMaterial size={0.04} color="rgb(124, 96, 250)" transparent opacity={0.1} />
         </points>
     );
 }

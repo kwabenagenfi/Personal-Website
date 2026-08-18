@@ -9,6 +9,7 @@ import ParticleBackground from "@/components/ParticleBackground";
 import ParticleBackgroundBack from "@/components/ParticleBackgroundBack";
 import CornerShapes from "@/components/CornerShapes";
 import Journey from "@/components/Journey";
+import AskKobe from "@/components/AskKobe";
 
 export default function Home() {
   return (
@@ -17,8 +18,9 @@ export default function Home() {
       <ParticleBackground />
       <CornerShapes />
       <div className="relative z-10 flex flex-col flex-1 w-full items-center">
-        <main className="flex flex-1 w-full max-w-6xl flex-col items-center justify-between py-20 px-8 sm:items-start">
+        <main className="flex flex-1 w-full max-w-6xl flex-col items-center justify-between py-10 px-8 sm:items-start">
           <Hero />
+          <AskKobe />
           <LogoMarquee />
           <About />
           <TechStack />
