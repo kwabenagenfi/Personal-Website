@@ -159,7 +159,7 @@ export default function AskKobe() {
             <div className="bg-white/30 backdrop-blur-md border border-white/10 rounded-2xl p-1 md:p-4 relative z-10">
 
                 <textarea
-                    type="text"
+
                     value={hasInteracted ? query : demoText}
                     onChange={(e) => {
                         setHasInteracted(true);
