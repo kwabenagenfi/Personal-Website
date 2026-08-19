@@ -31,7 +31,7 @@ export default function Nav() {
             <div className="flex-1 flex justify-center ml-4 md:ml-0">
 
                 <a
-                    href="https://MACFOLIO_URL"
+                    href="https://macfolio-khaki.vercel.app/"
                     target="_blank"
                     rel="noopener noreferrer"
                 >
