@@ -18,7 +18,7 @@ export default function Nav() {
             </ul>
 
             {isOpen && (
-                <ul className="absolute top-full left-0 w-full flex flex-col items-center gap-6 bg-black/90 py-6 md:hidden">
+                <ul className="absolute top-full left-0 w-full flex flex-col items-center gap-6 bg-black/90 py-3 md:hidden">
                     <li><Link href="/#home" onClick={() => setIsOpen(false)}>Home</Link></li>
                     <li><Link href="/#about" onClick={() => setIsOpen(false)}>About</Link></li>
                     <li><Link href="/#projects" onClick={() => setIsOpen(false)}>Projects</Link></li>

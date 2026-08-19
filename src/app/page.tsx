@@ -18,7 +18,7 @@ export default function Home() {
       <ParticleBackground />
       <CornerShapes />
       <div className="relative z-10 flex flex-col flex-1 w-full items-center">
-        <main className="flex flex-1 w-full max-w-6xl flex-col items-center justify-between py-10 px-8 sm:items-start">
+        <main className="flex flex-1 w-full max-w-6xl flex-col items-center justify-between py-10 px-2 md:px-8 sm:items-start">
           <Hero />
           <AskKobe />
           <LogoMarquee />

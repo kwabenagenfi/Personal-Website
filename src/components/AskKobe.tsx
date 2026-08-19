@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import { Search, Bot, ArrowUp } from "lucide-react";
+import { Search, Bot, ArrowUp, X } from "lucide-react";
 import { motion } from "framer-motion"
 
 type ResultData = {
@@ -148,7 +148,7 @@ export default function AskKobe() {
 
 
     return (
-        <section id="ask-kobe" className="scroll-mt-10 p-8 max-w-3xl mx-auto">
+        <section id="ask-kobe" className="scroll-mt-10 px-1 py-8 md:p-8 max-w-3xl mx-auto w-full">
             <div className="text-center mb-3">
                 <h2 className="text-3xl md:text-6xl font-serif">
                     .{"\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0"}Ask Along{"\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0"}.
@@ -156,9 +156,9 @@ export default function AskKobe() {
                 <div className="w-16 h-px bg-white/30 mx-auto my-1" />
             </div>
 
-            <div className="bg-white/30 backdrop-blur-md border border-white/10 rounded-2xl p-4 relative z-10">
+            <div className="bg-white/30 backdrop-blur-md border border-white/10 rounded-2xl p-1 md:p-4 relative z-10">
 
-                <input
+                <textarea
                     type="text"
                     value={hasInteracted ? query : demoText}
                     onChange={(e) => {
@@ -167,9 +167,11 @@ export default function AskKobe() {
                     }
                     }
                     onKeyDown={(e) => e.key === "Enter" && handleSubmit()}
-                    placeholder="Ask Anything about Kobe..."
-                    className="w-full bg-transparent outline-none text-lg placeholder:text-black-500 px-2 py-1"
+                    placeholder={mode === "about" ? "Ask Anything about Kobe..." : "Ask Anything..."}
+                    className="w-full bg-transparent outline-none text-lg placeholder:text-black-500 px-1 py-1"
                 />
+
+
                 <div className="flex items-center justify-between ">
                     <div className="flex bg-white/5 rounded-full p-1 border border-white/10">
                         <button
@@ -191,6 +193,8 @@ export default function AskKobe() {
                                 setQuery("");
                                 setResult(null);
                                 setError("");
+                                setHasInteracted(true);
+                                setDemoText("");
                             }}
                             className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm transition-colors ${mode === "agent" ? "bg-white text-black" : "text-gray-400"
                                 }`}
@@ -199,13 +203,30 @@ export default function AskKobe() {
                             Agent
                         </button>
                     </div>
-                    <button
-                        onClick={handleSubmit}
-                        disabled={loading || !query.trim()}
-                        className="bg-blue-500 text-black rounded-2xl w-9 h-9 flex items-center justify-center disabled:opacity-40 transition-opacity"
-                    >
-                        {loading ? "..." : <ArrowUp size={18} />}
-                    </button>
+                    <div className="flex items-center gap-2">
+                        {(hasInteracted ? query : demoText) && (
+                            <button
+                                onClick={() => {
+                                    setQuery("");
+                                    setDemoText("");
+                                    setResult(null);
+                                    setError("");
+                                    setDemoPhase("typing");
+                                    setHasInteracted(true);
+                                }}
+                                className="text-gray-400 hover:text-white px-2 transition-colors"
+                            >
+                                <X size={18} />
+                            </button>
+                        )}
+                        <button
+                            onClick={handleSubmit}
+                            disabled={loading || !query.trim()}
+                            className="bg-blue-500 text-black rounded-2xl w-9 h-9 flex items-center justify-center disabled:opacity-40 transition-opacity"
+                        >
+                            {loading ? "..." : <ArrowUp size={18} />}
+                        </button>
+                    </div>
 
                 </div>
 
@@ -214,7 +235,7 @@ export default function AskKobe() {
                 const demoResult = demoScript[demoIndex].result;
 
                 return (
-                    <div className="bg-black/90 backdrop-blur-sm border border-white/1 rounded-2xl p-5 -mt-4 relative z-0 max-h-[320px]">
+                    <div className="overflow-x-auto bg-black/90 backdrop-blur-sm border border-white/1 rounded-2xl p-5 -mt-4 relative z-0 max-h-[320px]">
                         <div className="flex items-center gap-2 mb-1">
                             <span className="w-4 h-4 rounded-full bg-green-500/20 flex items-center justify-center">
                                 <span className="w-1.5 h-1.5 rounded-full bg-green-400" />
@@ -241,7 +262,7 @@ export default function AskKobe() {
                                             transition={{ duration: 0.3, delay: i * 0.08 }}
                                             className="border-b border-white/5 last:border-0 hover:bg-white/5 transition-colors">
                                             {row.map((cell, j) => (
-                                                <td key={j} className="py-2 pr-4 text-gray-200">
+                                                <td key={j} className="whitespace-nowrap py-2 pr-4 text-gray-200">
                                                     {cell}
                                                 </td>
                                             ))}
@@ -259,7 +280,7 @@ export default function AskKobe() {
                 const normalized = normalize(result);
                 if (!normalized) return null;
                 return (
-                    <div className="bg-black/90 backdrop-blur-sm border border-white/1 rounded-2xl p-5 -mt-4 relative z-0 max-h-[320px]">
+                    <div className="overflow-x-auto bg-black/90 backdrop-blur-sm border border-white/1 rounded-2xl p-5 -mt-4 relative z-0 max-h-[320px]">
                         <div className="flex items-center gap-2 mb-1">
                             <span className="w-4 h-4 rounded-full bg-green-500/20 flex items-center justify-center">
                                 <span className="w-1.5 h-1.5 rounded-full bg-green-400" />
@@ -286,7 +307,7 @@ export default function AskKobe() {
                                             transition={{ duration: 0.3, delay: i * 0.08 }}
                                             className="border-b border-white/5 last:border-0 hover:bg-white/5 transition-colors">
                                             {row.map((cell, j) => (
-                                                <td key={j} className="py-2 pr-4 text-gray-200">
+                                                <td key={j} className="whitespace-nowrap py-2 pr-4 text-gray-200">
                                                     {cell}
                                                 </td>
                                             ))}
