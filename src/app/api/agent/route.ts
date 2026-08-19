@@ -42,7 +42,7 @@ Decide the best format for the answer:
 - If the question asks for a list, ranking or comparison of multiple items, respond with a table.
 - Otherwise, respond with plain text.
 
-Respond with ONLY JSON, no markdown fences, no other text, matching exactly one of these shapes
+Respond with ONLY valid JSON. No markdown fences, no trailing text, no citation numbers outside the JSON object, no explanation. Matching exactly one of these shapes:
 {"format": "text", "answer": "..."}
 {"format": "table", "columns": ["...", "..."], "rows": [["...", "..."], ["...", "..."]]}
 
@@ -60,7 +60,11 @@ ${context}`,
 
     let parsed;
     try {
-        const cleaned = raw.replace(/```json|```/g, "").trim();
+        const cleaned = raw
+            .replace(/```json|```/g, "")
+            .replace(/```/g, "")
+            .replace(/\[\d+\]/g, "")
+            .trim();
         parsed = JSON.parse(cleaned);
     } catch {
         parsed = { format: "text", answer: raw };
